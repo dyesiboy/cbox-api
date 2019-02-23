@@ -57,8 +57,11 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
 config :pBox, PBox.Repo,
-  username: "postgres",
-  password: "postgres",
+#username: "postgres",
+#password: "postgres",
   database: "pbox_dev",
   hostname: "localhost",
   pool_size: 10
+
+  #import_config "dev.secret.exs"
+
