@@ -12,9 +12,11 @@ defmodule PBox.Accounts.User do
   end
 
   @doc false
-  def changeset(user, attrs) do
+  def changeset(user, params \\ %{}) do
     user
-    |> cast(attrs, [:username, :email, :password_hash])
+    |> cast(params, [:username, :email, :password_hash])
     |> validate_required([:username, :email, :password_hash])
+    |> unique_constraint(:username)
+    |> unique_constraint(:email)
   end
 end
