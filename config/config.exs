@@ -27,4 +27,11 @@ config :phoenix, :json_library, Jason
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
+#
+ config :guardian, Guardian,
+  issuer: "PBox",
+  ttl: {30, :days},
+  verify_issuer: true,
+  serializer: PBox.GuardianSerializer
+
 import_config "#{Mix.env()}.exs"

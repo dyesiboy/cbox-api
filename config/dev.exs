@@ -21,6 +21,9 @@ config :pBox, PBoxWeb.Endpoint,
     ]
   ]
 
+config :guardian, Guardian,
+  secret_key: "1o7F8E7bQtjYBHVPT2lpArGJQlSeBRcf8vV2/TCmAGfXptcqKKG8TD4oENFBzME/"
+  
 # ## SSL Support
 #
 # In order to use HTTPS in development, a self-signed
